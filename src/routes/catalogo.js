@@ -50,7 +50,7 @@ router.get("/genero/:genero", async (req, res) => {
 
 router.get("/categoria/:categoria", async (req, res) => {
     const categoria = req.params.categoria;
-    const contenido = await sequelize.query("SELECT * FROM `contenido_json` WHERE nombre LIKE :buscar_categoria", { 
+    const contenido = await sequelize.query("SELECT * FROM `contenido_json` WHERE categoria LIKE :buscar_categoria", { 
         replacements: { buscar_categoria: `%${categoria}%` },
         type: QueryTypes.SELECT 
     });
